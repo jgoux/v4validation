@@ -47,7 +47,7 @@ let isUnique = [async v => !(await database.users.findOne({ email: v })), v => `
 let myRequired = [isRequired[0], "How simple!"]
 
 (async () => {
-	let schema = {
+  let schema = {
     id: [myRequired, isString]
     email: [isRequired, isEmail, isEqualToPath('confirmation'), isUnique]
   }
